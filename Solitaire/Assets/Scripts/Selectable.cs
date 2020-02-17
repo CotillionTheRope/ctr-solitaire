@@ -41,7 +41,7 @@ public class Selectable : MonoBehaviour
         value = 13;
       }
 
-      else {
+      else if(valueString != "ard"){
         value = int.Parse(valueString);
       }
 

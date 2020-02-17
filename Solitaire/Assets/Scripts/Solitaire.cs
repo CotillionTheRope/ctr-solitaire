@@ -43,12 +43,16 @@ public class Solitaire : MonoBehaviour
   }
 
   public void PlayCards() {
+    foreach(List<string> list in bottoms) {
+      list.Clear();
+    }
+    
     deck = GenerAteDeck();
     Shuffle(deck);
 
-    foreach (string card in deck) {
-      print(card);
-    }
+    // foreach (string card in deck) {
+    //   print(card);
+    // }
     SolitaireSort();
     StartCoroutine(SolitaireDeal());
     SortDeckIntoTrips();
@@ -176,6 +180,7 @@ public class Solitaire : MonoBehaviour
   }
 
   void RestackTopDeck() {
+    deck.Clear();
     foreach(string card in discardPile) {
       deck.Add(card);
     }
